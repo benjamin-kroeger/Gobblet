@@ -14,6 +14,7 @@ class Board {
         for( row in board){
             if(row.distinctBy { it.getTopPiece().colour }.size == 1){
                 println("${row[0].getTopPiece().colour} has won")
+                return true
             }
         }
 
@@ -22,10 +23,12 @@ class Board {
             val column = board.map { it[col] } // Get all pieces in the current column
             if (column.distinctBy { it.getTopPiece().colour }.size == 1) {
                 println("${column[0].getTopPiece().colour} has won")
+                return true
             }
         }
 
 
+        return false
     }
 
     fun placePiece(x: Int, y: Int, piece: Piece) {
