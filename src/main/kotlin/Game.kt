@@ -4,8 +4,8 @@ class Game {
 
     val board = Board()
 
-    val player1 = Player()
-    val player2 = Player()
+    val player1 : PlayerBenjamin = PlayerBenjamin()
+    val player2 : PlayerTim = PlayerTim()
 
     fun main(args: Array<String>) {
 

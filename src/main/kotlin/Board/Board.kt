@@ -12,7 +12,7 @@ class Board {
 
         // check rows
         for( row in board){
-            if(row.distinctBy { it.getTopPiece().colour }.size == 1){
+            if(row.distinctBy { it.getTopPiece().colour }.size == 1 && row.last().getTopPiece().colour != PieceColor.default){
                 println("${row[0].getTopPiece().colour} has won")
                 return true
             }
@@ -21,21 +21,21 @@ class Board {
         // Check columns
         for (col in 0..<board[0].size) { // Assuming all rows have the same number of columns
             val column = board.map { it[col] } // Get all pieces in the current column
-            if (column.distinctBy { it.getTopPiece().colour }.size == 1) {
+            if (column.distinctBy { it.getTopPiece().colour }.size == 1 && column.last().getTopPiece().colour != PieceColor.default) {
                 println("${column[0].getTopPiece().colour} has won")
                 return true
             }
         }
 
         val mainDiagonal = (0 until board.size).map { board[it][it] }
-        if (mainDiagonal.distinctBy { it.getTopPiece().colour }.size == 1) {
+        if (mainDiagonal.distinctBy { it.getTopPiece().colour }.size == 1 && mainDiagonal.last().getTopPiece().colour != PieceColor.default) {
             println("${mainDiagonal[0].getTopPiece().colour} has won")
             return true
         }
 
         // Check anti-diagonal (top-right to bottom-left)
         val antiDiagonal = (0 until board.size).map { board[it][board.size - 1 - it] }
-        if (antiDiagonal.distinctBy { it.getTopPiece().colour }.size == 1) {
+        if (antiDiagonal.distinctBy { it.getTopPiece().colour }.size == 1 && antiDiagonal.last().getTopPiece().colour != PieceColor.default) {
             println("${antiDiagonal[0].getTopPiece().colour} has won")
             return true
         }
