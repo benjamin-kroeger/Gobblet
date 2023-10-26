@@ -1,3 +1,4 @@
+import Benjamin.PlayerBenjamin
 import Board.Board
 
 class Game {
@@ -7,8 +8,9 @@ class Game {
     val player1 : PlayerBenjamin = PlayerBenjamin()
     val player2 : PlayerTim = PlayerTim()
 
-    fun main(args: Array<String>) {
+    fun runGame() {
 
+        println("Starting game")
         while (!board.checkForWinner()) {
             try {
                 player1.nextMove(this.board)
@@ -25,6 +27,4 @@ class Game {
         }
 
     }
-
-
 }
