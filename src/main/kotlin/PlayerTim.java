@@ -1,8 +1,10 @@
+import Board.Board;
 public class PlayerTim implements Player{
 
 
+
     @Override
-    public void nextMove() {
+    public void nextMove(Board board) {
 
     }
     public int feldBewertung(){

@@ -1,4 +1,6 @@
+import Board.Board
+
 interface Player {
-    fun nextMove()
+    fun nextMove(board: Board)
 
 }
