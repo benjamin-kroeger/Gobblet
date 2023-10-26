@@ -1,7 +1,4 @@
-class Player {
-
-    fun nextMove(){
-
-    }
+interface Player {
+    fun nextMove()
 
 }

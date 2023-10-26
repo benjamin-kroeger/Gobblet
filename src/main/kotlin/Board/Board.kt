@@ -27,6 +27,19 @@ class Board {
             }
         }
 
+        val mainDiagonal = (0 until board.size).map { board[it][it] }
+        if (mainDiagonal.distinctBy { it.getTopPiece().colour }.size == 1) {
+            println("${mainDiagonal[0].getTopPiece().colour} has won")
+            return true
+        }
+
+        // Check anti-diagonal (top-right to bottom-left)
+        val antiDiagonal = (0 until board.size).map { board[it][board.size - 1 - it] }
+        if (antiDiagonal.distinctBy { it.getTopPiece().colour }.size == 1) {
+            println("${antiDiagonal[0].getTopPiece().colour} has won")
+            return true
+        }
+
 
         return false
     }
