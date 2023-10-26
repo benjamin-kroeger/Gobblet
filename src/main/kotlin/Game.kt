@@ -11,13 +11,13 @@ class Game {
 
         while (!board.checkForWinner()) {
             try {
-                player1.nextMove()
+                player1.nextMove(this.board)
             }catch (e:Exception){
                 println("Player 1 has lost because he triggered an error")
             }
 
             try {
-                player2.nextMove()
+                player2.nextMove(this.board)
             }catch (e:Exception){
                 println("Player 2 has lost because he triggered an error")
             }

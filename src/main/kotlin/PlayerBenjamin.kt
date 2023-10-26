@@ -1,7 +1,9 @@
+import Board.Board
+
 class PlayerBenjamin : Player {
 
-    override fun nextMove() {
-        TODO("Not yet implemented")
+    override fun nextMove(board: Board) {
+
     }
 
 }

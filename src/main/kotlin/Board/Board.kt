@@ -8,6 +8,10 @@ class Board {
         }
     }
 
+    fun getBoardMatrix() : Array<Array<Field>> {
+        return boardMatrix
+    }
+
     fun checkForWinner() : Boolean{
 
         // check rows
