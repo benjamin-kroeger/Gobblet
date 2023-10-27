@@ -13,7 +13,7 @@ class Game {
         println("Starting game")
         //while (!board.checkForWinner()) {
         try {
-            player1.nextMove(this.board)
+            //player1.nextMove(this.board)
         } catch (e: Exception) {
             println("Player 1 has lost because he triggered an error")
         }
