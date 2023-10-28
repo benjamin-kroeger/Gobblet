@@ -2,9 +2,11 @@ import Board.Board;
 import Board.Field;
 import Board.PieceColor;
 import Board.Piece;
+import org.jetbrains.annotations.NotNull;
 
 public class PlayerTim implements Player {
     int [][] bewertungsmatrix1;
+
 
 
 
@@ -61,7 +63,7 @@ public class PlayerTim implements Player {
         return bewertung;
     }
 
-    public boolean gewinnMöglichkeit(Board board) {
+    public boolean gewinnMoeglichkeit(Board board) {
 
 
         return false;
@@ -106,5 +108,10 @@ public class PlayerTim implements Player {
         bewertungsmatrix1[2][2]=2;
         bewertungsmatrix1[2][1]=2;
         return bewertungsmatrix1;
+    }
+
+    @Override
+    public void setColor(@NotNull PieceColor color) {
+        System.out.println("hui");
     }
 }

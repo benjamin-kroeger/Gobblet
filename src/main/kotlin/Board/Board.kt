@@ -53,7 +53,8 @@ class Board {
         try {
             boardMatrix[x][y].placePiece(piece)
         } catch (e: Exception) {
-            println("Fuck you")
+            println("place piece error")
+            println(e.message)
         }
     }
 
@@ -62,7 +63,8 @@ class Board {
             val piece = boardMatrix[x_old][y_old].removePiece()
             boardMatrix[x_new][y_new].placePiece(piece)
         }catch (e: Exception){
-            println("Fuckyou")
+            println("Move piece error")
+            println(e.message)
         }
     }
 
